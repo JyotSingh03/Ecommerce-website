@@ -1,0 +1,144 @@
+span{
+    margin-top: 15px;
+    position: relative;
+    animation: move-text 0.75s forwards;
+    font-family: 'Preahvihear', sans-serif;
+    opacity: 0;
+  }
+  @keyframes move-text {
+    0% { bottom: -0.2em; opacity: 1; }
+    50% { bottom: 0.2em; }
+    100% { bottom: 0; opacity: 1; }
+}
+body {
+    background-image: linear-gradient(90deg, #FFDEE9 5%, #B5FFFC 100%);
+}
+header {
+  background-color: transparent
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Preahvihear', sans-serif; 
+}
+
+p{
+  animation-name: fade-In;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  font-family: 'Preahvihear',sans-serif;
+  text-align: justify;
+  width: 500px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: -370px;
+  font-family: 'Preahvihear','sans-serif';
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+button{
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #555;
+}
+@media (max-width: 768px) {
+  form {
+    padding: 1rem;
+  }
+}
+.contact{
+  margin-top: 10px;
+  font-size: 35px;
+}
+@keyframes fade-In {
+    99%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }   
+}
+.contact-form{
+    margin-left: 450px;
+    border: 2px solid black;
+    height: 600px;
+    width: 550px;
+}
+nav{
+  top: 4px;
+  cursor: pointer;
+  display: flex;
+  text-transform: uppercase;
+  font-family:'Preahvihear',sans-serif;
+}
+.nav-toggle {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 5px;
+  margin: 5px 1410px;
+  background-color: #333;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+#nav-toggle:checked + .nav-button .bar:nth-child(1) {
+  transform: rotate(-55deg) translate(-5px, 6px);
+}
+#nav-toggle:checked + .nav-button .bar:nth-child(2) {
+  animation: line;
+  opacity: 0;  
+}
+@keyframes line{
+  99%{
+    visibility: visible;
+  }
+  100%{
+    visibility: hidden;
+  }
+}
+#nav-toggle:checked + .nav-button .bar:nth-child(3) {
+  transform: rotate(55deg) translate(-5px, -6px);
+}
+.nav {
+  position: fixed;
+  left: 1530px;
+  padding-top: 60px;
+}
+#nav-toggle:checked + .nav-button ~ .nav {
+  left: 1140px;
+}
+.nav a {
+  display: block;
+  padding: 15px;
+  color: black;
+  text-decoration: none;
+  margin-top: -70px;
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 100%;
+  }
+}
